@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="María María Cafetería — café, postres y mejores momentos.">
+  <meta name="theme-color" content="#6b421f">
+  <title>maría maría | Cafetería</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!--
+    ============================================================
+    MARÍA MARÍA CAFETERÍA
+    ------------------------------------------------------------
+    Esta versión funciona sin servidor:
+    - Menú y filtros
+    - Carrito con cantidades
+    - Persistencia del carrito con localStorage
+    - Checkout con validación
+    - Pedido por WhatsApp
+    - Formulario de contacto por correo (mailto)
+    - Favoritos
+    - Búsqueda
+    - Modo oscuro
+    - Diseño responsive
+    - Modal de producto
+    - Notificaciones
+    ============================================================
+  -->
+
+  <div class="announcement">
+    <span>Buen café</span><b>♥</b><span>mejores momentos</span>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#inicio" aria-label="María María inicio">
+      <img src="assets/logo.jpg" alt="Logo María María Cafetería">
+      <span>
+        <strong>maría maría</strong>
+        <small>CAFETERÍA</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#menu">Menú</a>
+      <a href="#galeria">Galería</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Buscar">⌕</button>
+      <button class="icon-btn" id="themeBtn" aria-label="Cambiar tema">☼</button>
+      <button class="icon-btn cart-trigger" id="cartBtn" aria-label="Abrir carrito">
+        🛒 <span id="cartCount">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">CAFÉ · POSTRES · MOMENTOS</p>
+        <h1>El mejor café <em>comienza aquí.</em></h1>
+        <p class="hero-text">
+          En María María creamos experiencias que se saborean en cada taza,
+          con un ambiente cálido, productos artesanales y mucho corazón.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#menu">Ver menú <span>→</span></a>
+          <a class="btn btn-ghost" href="#nosotros">Conócenos</a>
+        </div>
+        <div class="hero-meta">
+          <span>☕ Café seleccionado</span>
+          <span>✦ Hecho con amor</span>
+          <span>♡ Ambiente acogedor</span>
+        </div>
+      </div>
+
+      <div class="hero-art reveal">
+        <div class="hero-image-wrap">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85" alt="Taza de café en una cafetería">
+        </div>
+        <div class="floating-note">Café<br><i>que une</i> ♡</div>
+        <div class="seal">m<br>m</div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <article><span>☕</span><div><b>Café de calidad</b><small>Gran sabor en cada taza</small></div></article>
+      <article><span>🧁</span><div><b>Postres artesanales</b><small>Hechos con ingredientes reales</small></div></article>
+      <article><span>♡</span><div><b>Ambiente acogedor</b><small>Ideal para compartir</small></div></article>
+      <article><span>🌿</span><div><b>Ingredientes frescos</b><small>Seleccionados con cuidado</small></div></article>
+      <article><span>☆</span><div><b>Excelente servicio</b><small>Siempre para ti</small></div></article>
+    </section>
+    <!-- =========================================================
+     SECCIÓN EVENTOS — MARÍA MARÍA
+     No modifica el resto de la página.
+========================================================= -->
+
+<section class="events-section" id="eventos">
+  <div class="events-content">
+
+    <div class="events-text">
+      <p class="eyebrow">MARÍA MARÍA PARA TUS MOMENTOS ESPECIALES</p>
+
+      <h2>
+        ¿Tienes un <em>evento?</em>
+      </h2>
+
+      <p>
+        Llevamos el sabor y la esencia de María María a tus momentos
+        más importantes. Atendemos eventos sociales, celebraciones,
+        reuniones y eventos corporativos.
+      </p>
+
+      <div class="events-list">
+        <div>
+          <span>♡</span>
+          <p>
+            <strong>Eventos sociales</strong>
+            <small>Celebraciones, cumpleaños y reuniones.</small>
+          </p>
+        </div>
+
+        <div>
+          <span>☕</span>
+          <p>
+            <strong>Coffee breaks</strong>
+            <small>Café y alimentos para reuniones y empresas.</small>
+          </p>
+        </div>
+
+        <div>
+          <span>✦</span>
+          <p>
+            <strong>Eventos corporativos</strong>
+            <small>Una experiencia especial para tu equipo.</small>
+          </p>
+        </div>
+      </div>
+
+      <button class="events-whatsapp-btn" id="eventWhatsappBtn">
+        Cotiza tu evento por WhatsApp
+        <span>→</span>
+      </button>
+
+      <p class="events-note">
+        Cuéntanos qué tienes en mente y te ayudaremos a crear una propuesta.
+      </p>
+    </div>
+
+    <div class="events-image">
+      <img
+        src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=85"
+        alt="Evento y celebración">
+      
+      <div class="events-badge">
+        <span>maría maría</span>
+        <strong>Eventos</strong>
+        <small>Momentos que se disfrutan</small>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <section class="section about" id="nosotros">
+      <div class="section-image reveal">
+        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1000&q=85" alt="Interior acogedor de María María">
+        <div class="image-caption">Aquí también<br><i>se sueña en café</i> ♡</div>
+      </div>
+      <div class="about-copy reveal">
+        <p class="eyebrow">CONÓCENOS</p>
+        <h2>Más que una <em>cafetería</em></h2>
+        <p>
+          María María nació para ser ese lugar al que quieres volver:
+          una pausa en medio del día, una charla que se alarga, un postre
+          para compartir o simplemente una buena taza de café.
+        </p>
+        <p>
+          Cuidamos cada detalle para que nuestros sabores y nuestro espacio
+          se sientan cercanos, elegantes y llenos de calidez.
+        </p>
+        <div class="signature">maría maría</div>
+        <a class="text-link" href="#contacto">Conoce nuestra historia →</a>
+      </div>
+    </section>
+
+    <section class="section menu-section" id="menu">
+      <div class="section-heading">
+        <p class="eyebrow">NUESTRO MENÚ</p>
+        <h2>Delicias para todos los <em>gustos</em></h2>
+        <p>Desde un buen café hasta un postre artesanal, siempre hay algo especial para ti.</p>
+      </div>
+
+      <div class="menu-toolbar">
+        <div class="categories" id="categories"></div>
+        <div class="search-box" id="searchBox">
+          <input id="menuSearch" type="search" placeholder="Buscar en el menú..." aria-label="Buscar en el menú">
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="special">
+      <div>
+        <p class="eyebrow">ESPECIAL DE LA CASA</p>
+        <h2>Un momento dulce<br><em>empieza con café.</em></h2>
+        <p>Prueba nuestra combinación favorita: cappuccino + pastel de chocolate.</p>
+        <button class="btn btn-light" id="specialBtn">Agregar combo · $115</button>
+      </div>
+      <div class="special-photo">
+        <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1200&q=85" alt="Café especial de la casa">
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="galeria">
+      <div class="section-heading">
+        <p class="eyebrow">GALERÍA</p>
+        <h2>Pequeños momentos, <em>grandes recuerdos.</em></h2>
+      </div>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=85" alt="Cafetería" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85" alt="Café" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85" alt="Pastel" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85" alt="Dona" loading="lazy">
+      </div>
+    </section>
+
+    <section class="section reviews">
+      <div class="section-heading">
+        <p class="eyebrow">RESEÑAS</p>
+        <h2>Lo que dicen nuestros <em>clientes.</em></h2>
+      </div>
+      <div class="review-grid">
+        <article><div class="stars">★★★★★</div><p>“El café está delicioso y el lugar tiene una vibra preciosa. Definitivamente volvería.”</p><b>Ana López</b><small>Cliente frecuente</small></article>
+        <article><div class="stars">★★★★★</div><p>“Me encantaron los postres y la atención. Se siente como un lugar hecho con mucho cariño.”</p><b>Mariana Cruz</b><small>Cliente</small></article>
+        <article><div class="stars">★★★★★</div><p>“Perfecto para ir a trabajar, platicar o simplemente disfrutar un café tranquilo.”</p><b>Daniel Torres</b><small>Cliente</small></article>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contacto">
+      <div class="contact-info">
+        <p class="eyebrow">VISÍTANOS</p>
+        <h2>Tu próxima taza<br><em>te está esperando.</em></h2>
+        <div class="contact-list">
+          <div><span>⌖</span><p><b>Dirección</b><br><span id="addressText">Av. Principal #123, Playa del Carmen, Quintana Roo</span></p></div>
+          <a
+  class="maps-button"
+  href="https://www.google.com/maps/search/?api=1&query=Av.+10+Norte+123+Playa+del+Carmen+Quintana+Roo"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  📍 Cómo llegar con Google Maps
+</a>
+          <div><span>◷</span><p><b>Horario</b><br>Lunes a domingo · 8:00 AM — 10:00 PM</p></div>
+          <div><span>☎</span><p><b>Teléfono</b><br><span id="phoneText">+52 999 000 0000</span></p></div>
+        </div>
+        <div class="socials">
+          <a id="instagramLink" href="https://www.instagram.com/maria_maria_cafe?exln=M2ljc280eDdqbGto" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <h3>¿Tienes alguna pregunta?</h3>
+        <p>Escríbenos y te responderemos lo antes posible.</p>
+        <form id="contactForm">
+          <label>Nombre<input id="contactName" required type="text" placeholder="Tu nombre"></label>
+          <label>Correo<input id="contactEmail" required type="email" placeholder="cafemariamaria20@gmail.com"></label>
+          <label>Mensaje<textarea id="contactMessage" required rows="5" placeholder="¿En qué podemos ayudarte?"></textarea></label>
+          <button class="btn btn-primary" type="submit">Enviar mensaje →</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <img src="assets/logo.jpg" alt="María María">
+      <div><strong>maría maría</strong><small>CAFETERÍA</small></div>
+    </div>
+    <p>© <span id="year"></span> María María Cafetería. Todos los derechos reservados.</p>
+    <p class="footer-note">Buen café ♥ mejores momentos</p>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <aside class="drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div><p class="eyebrow">TU PEDIDO</p><h2>Carrito</h2></div>
+      <button class="close-btn" id="closeCart" aria-label="Cerrar carrito">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-bottom">
+      <div class="cart-total"><span>Total</span><strong id="cartTotal">$0</strong></div>
+      <button class="btn btn-primary full" id="checkoutBtn">Continuar pedido →</button>
+      <button class="text-button" id="clearCartBtn">Vaciar carrito</button>
+    </div>
+  </aside>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- CHECKOUT MODAL -->
+  <div class="modal-backdrop" id="checkoutModal">
+    <div class="modal">
+      <button class="close-btn modal-close" aria-label="Cerrar">×</button>
+      <p class="eyebrow">CONFIRMAR PEDIDO</p>
+      <h2>Un último detalle.</h2>
+      <p>Completa tus datos y te enviaremos el pedido a WhatsApp.</p>
+      <form id="checkoutForm">
+        <label>Nombre<input id="orderName" required type="text" placeholder="Tu nombre"></label>
+        <label>Teléfono<input id="orderPhone" required type="tel" placeholder="10 dígitos"></label>
+        <label>Tipo de pedido
+          <select id="orderType" required>
+            <option value="Recoger en cafetería">Recoger en cafetería</option>
+            <option value="Entrega">Entrega</option>
+          </select>
+        </label>
+        <label>Notas<textarea id="orderNotes" rows="3" placeholder="Ej. sin azúcar, leche deslactosada..."></textarea></label>
+        <div class="checkout-summary" id="checkoutSummary"></div>
+        <button class="btn btn-primary full" type="submit">Enviar pedido por WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal-backdrop" id="productModal">
+    <div class="modal product-modal">
+      <button class="close-btn modal-close" aria-label="Cerrar">×</button>
+      <img id="modalImage" src="" alt="">
+      <div>
+        <p class="eyebrow" id="modalCategory"></p>
+        <h2 id="modalName"></h2>
+        <p id="modalDescription"></p>
+        <strong class="modal-price" id="modalPrice"></strong>
+        <button class="btn btn-primary full" id="modalAddBtn">Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
