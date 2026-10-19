@@ -8,7 +8,7 @@
    ============================================================ */
 
 const CONFIG = {
-  WHATSAPP_NUMBER: "529990000000", // México: 52 + número, sin + ni espacios
+  WHATSAPP_NUMBER: "3334511823 ", // México: 52 + número, sin + ni espacios
   BUSINESS_EMAIL: "cafemariamaria20@gmail.com",
   INSTAGRAM_URL: "https://www.instagram.com/maria_maria_cafe?exln=M2ljc280eDdqbGto",
   CURRENCY: "MXN"
